@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty & Co - Institut de Beauté Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/beauty&co.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'gold': {
+                            50: '#fefbf6',
+                            100: '#fcf5e8',
+                            200: '#f7e7c5',
+                            300: '#f0d49d',
+                            400: '#e6bb6f',
+                            500: '#d4b896',
+                            600: '#c9a876',
+                            700: '#b8956a',
+                            800: '#9c7b56',
+                            900: '#7d6145',
+                        },
+                        'brown': {
+                            50: '#faf8f6',
+                            100: '#f2ede8',
+                            200: '#e5d5c8',
+                            300: '#d4b8a4',
+                            400: '#bd9580',
+                            500: '#a87968',
+                            600: '#936659',
+                            700: '#7a534a',
+                            800: '#654440',
+                            900: '#4a2f1f',
+                            950: '#2c1810',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(60px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans bg-white overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-500" id="header">
+        <div class="glass backdrop-blur-xl border-b border-gold-200/20">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex justify-between items-center py-6">
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-4 group">
+                        <div class="w-16 h-16 relative flex items-center justify-center">
+                            <img class="w-full h-full object-contain"
+                                src="/img/ChatGPT_Image_12_juil._2025__17_46_04-removebg-preview.png"
+                                alt="Beauty & Co Logo">
+                        </div>
+                        <div class="transition-all duration-300 group-hover:scale-105">
+                            <h1 class="font-serif text-2xl font-light text-brown-950 tracking-wider">BEAUTY & CO</h1>
+                            <p class="text-xs text-gold-500 uppercase tracking-[3px] font-medium">Institut de Beauté</p>
+                        </div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <nav class="hidden lg:flex space-x-12">
+                        <a href="#accueil"
+                            class="nav-link text-sm font-medium text-brown-900 hover:text-gold-500 transition-all duration-300 uppercase tracking-wider relative group">
+                            L'Institut
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#services"
+                            class="nav-link text-sm font-medium text-brown-900 hover:text-gold-500 transition-all duration-300 uppercase tracking-wider relative group">
+                            Services
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#prestations"
+                            class="nav-link text-sm font-medium text-brown-900 hover:text-gold-500 transition-all duration-300 uppercase tracking-wider relative group">
+                            Prestations
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="/beautyFAQ.html"
+                            class="nav-link text-sm font-medium text-brown-900 hover:text-gold-500 transition-all duration-300 uppercase tracking-wider relative group">
+                            FAQs
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="/beautycontact.html"
+                            class="nav-link text-sm font-medium text-brown-900 hover:text-gold-500 transition-all duration-300 uppercase tracking-wider relative group">
+                            Contact
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </nav>
+
+                    <!-- Mobile menu button -->
+                    <button class="lg:hidden p-2" id="mobile-menu-button">
+                        <svg class="w-6 h-6 text-brown-900 transition-transform duration-300" id="menu-icon" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" id="hamburger"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" id="close" class="hidden"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu mobile déroulant -->
+            <div class="lg:hidden glass backdrop-blur-xl border-t border-gold-200/20 hidden" id="mobile-menu">
+                <div class="px-6 py-4 space-y-4">
+                    <a href="#accueil"
+                        class="block text-brown-900 font-medium tracking-wider uppercase py-3 border-b border-gold-200/30 hover:text-gold-500 transition-colors duration-300">L'Institut</a>
+                    <a href="#services"
+                        class="block text-brown-900 font-medium tracking-wider uppercase py-3 border-b border-gold-200/30 hover:text-gold-500 transition-colors duration-300">Services</a>
+                    <a href="#prestations"
+                        class="block text-brown-900 font-medium tracking-wider uppercase py-3 border-b border-gold-200/30 hover:text-gold-500 transition-colors duration-300">Prestations</a>
+                    <a href="/beautyFAQ.html"
+                        class="block text-brown-900 font-medium tracking-wider uppercase py-3 border-b border-gold-200/30 hover:text-gold-500 transition-colors duration-300">FAQs</a>
+                    <a href="/beautycontact.html"
+                        class="block text-brown-900 font-medium tracking-wider uppercase py-3 hover:text-gold-500 transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Menu mobile toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger');
+            const closeIcon = document.getElementById('close');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function () {
+                    // Toggle menu visibility
+                    mobileMenu.classList.toggle('hidden');
+
+                    // Toggle icons
+                    hamburgerIcon.classList.toggle('hidden');
+                    closeIcon.classList.toggle('hidden');
+                });
+
+                // Fermer le menu si on clique sur un lien
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.add('hidden');
+                        hamburgerIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    });
+                });
+
+                // Fermer le menu si on clique ailleurs
+                document.addEventListener('click', function (e) {
+                    if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                        hamburgerIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 hero-bg"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-gold-500/30 via-transparent to-brown-900/40"></div>
+
+        <!-- Floating elements -->
+        <div
+            class="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-gold-300/20 to-gold-500/20 rounded-full blur-xl animate-float">
+        </div>
+        <div class="absolute bottom-32 right-16 w-48 h-48 bg-gradient-to-tl from-gold-400/20 to-gold-600/20 rounded-full blur-2xl animate-float"
+            style="animation-delay: 2s;"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <div class="scroll-reveal">
+                <p class="text-gold-300 text-sm font-medium uppercase tracking-[4px]">Excellence & Raffinement</p>
+            </div>
+            <div class="scroll-reveal">
+                <h1 class="font-serif text-6xl lg:text-7xl font-light text-white mb-8 tracking-wider">
+                    <span class="block">BEAUTY</span>
+                    <span class="text-gradient">&</span>
+                    <span class="block">CO</span>
+                </h1>
+            </div>
+            <div class="scroll-reveal">
+                <p class="text-xl text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed">
+                    Offrez à votre corps et votre esprit une parenthèse de bien-être dans un institut premium au cœur
+                    d’Abidjan.
+                    Des soins pensés pour vous, alliant innovations modernes et rituels traditionnels pour révéler votre
+                    beauté naturelle.
+                </p>
+            </div>
+            <div class="scroll-reveal flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="/beautycontact.html"
+                    class="group relative px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold uppercase tracking-wider text-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-gold-500/25 shimmer-effect">
+                    <span class="relative z-10">Prendre Rendez-vous</span>
+                </a>
+                <a href="#services"
+                    class="group relative px-8 py-4 glass border-2 border-white/30 text-white font-semibold uppercase tracking-wider text-sm transition-all duration-500 hover:bg-white/10 hover:scale-105">
+                    Découvrir nos Services
+                    <span class="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-2">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-32 bg-gradient-to-b from-gold-50 to-white relative overflow-hidden">
+        <div
+            class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-gold-200/30 to-gold-300/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-gold-200/30 to-gold-300/20 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="scroll-reveal">
+                    <h2 class="font-serif text-5xl lg:text-6xl font-light text-brown-950 mb-8 leading-tight">
+                        L'Excellence au Service de Votre
+                        <span class="text-gradient">Beauté</span>
+                    </h2>
+                    <p class="text-xl text-gold-600 font-medium mb-8 leading-relaxed">
+                        Offrez-vous l’expertise d’un institut premium à Abidjan, où chaque soin est conçu pour sublimer
+                        votre beauté naturelle et répondre à vos besoins uniques.
+                    </p>
+                    <div class="space-y-6 mb-10">
+                        <p class="text-gray-600 leading-relaxed">
+                            Vous êtes accueillie dans un lieu raffiné et apaisant, pensé pour votre confort total, entre
+                            les mains d’esthéticiennes certifiées et passionnées.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Grâce à des soins haut de gamme, des produits exclusifs et des protocoles sur mesure, vous
+                            bénéficiez de résultats visibles, durables et adaptés à votre peau.
+                        </p>
+                    </div>
+
+                    <!-- Features list -->
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4 group">
+                            <div
+                                class="w-2 h-2 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full group-hover:scale-150 transition-transform duration-300">
+                            </div>
+                            <span
+                                class="text-gray-700 group-hover:text-gold-600 transition-colors duration-300">Expertise
+                                certifiée & techniques internationales</span>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <div
+                                class="w-2 h-2 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full group-hover:scale-150 transition-transform duration-300">
+                            </div>
+                            <span
+                                class="text-gray-700 group-hover:text-gold-600 transition-colors duration-300">Produits
+                                haut de gamme & technologie de pointe</span>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <div
+                                class="w-2 h-2 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full group-hover:scale-150 transition-transform duration-300">
+                            </div>
+                            <span class="text-gray-700 group-hover:text-gold-600 transition-colors duration-300">Hygiène
+                                irréprochable dans un cadre luxueux</span>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <div
+                                class="w-2 h-2 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full group-hover:scale-150 transition-transform duration-300">
+                            </div>
+                            <span class="text-gray-700 group-hover:text-gold-600 transition-colors duration-300">Soin
+                                personnalisé & accompagnement sur mesure</span>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <div
+                                class="w-2 h-2 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full group-hover:scale-150 transition-transform duration-300">
+                            </div>
+                            <span
+                                class="text-gray-700 group-hover:text-gold-600 transition-colors duration-300">Programme
+                                fidélité avec avantages exclusifs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-reveal">
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500">
+                        </div>
+                        <div
+                            class="relative mb-8 bg-white rounded-2xl overflow-hidden shadow-2xl group-hover:scale-105 transition-transform duration-500">
+                            <img src="/img/logo2.jpg" alt="Institut Beauty & Co" class="w-full h-96 object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brown-900/50 via-transparent to-transparent">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-center">
+                        <a href="/beautycontact.html"
+                            class="group relative px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold uppercase tracking-wider text-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-gold-500/25 shimmer-effect">
+                            <span class="relative z-10">Réservez un appel</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Nos Prestations Section -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Grid layout exact comme la référence -->
+            <div class="grid lg:grid-cols-3 gap-16 items-start">
+
+                <div class="scroll-reveal">
+                    <h1
+                        class="pb-12 text-center font-serif text-5xl lg:text-6xl font-light text-brown-950 mb-6 leading-tight">
+                        Nos
+                        <span class="text-gradient">
+                            prestations
+                        </span>
+                    </h1>
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500">
+                        </div>
+
+                        <div
+                            class="relative bg-white rounded-2xl overflow-hidden shadow-2xl group-hover:scale-105 transition-transform duration-500">
+                            <img src="/img/image1.png" alt="Institut Beauty<img src="
+                                https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Institut Beauty & Co" class="w-full h-96 object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-brown-900/50 via-transparent to-transparent">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne 2: Soins du visage et Soins du corps -->
+                <div class="space-y-16 scroll-reveal">
+                    <!-- Soins du visage -->
+                    <div class="text-center">
+                        <div class="mb-6">
+                            <svg class="w-16 h-16 mx-auto text-gold-500" fill="currentColor" viewBox="0 0 100 100">
+                                <circle cx="50" cy="40" r="25" fill="none" stroke="currentColor" stroke-width="2" />
+                                <path d="M35 35 Q45 25 55 35" fill="none" stroke="currentColor" stroke-width="2" />
+                                <circle cx="42" cy="37" r="2" />
+                                <circle cx="58" cy="37" r="2" />
+                                <path d="M45 45 Q50 50 55 45" fill="none" stroke="currentColor" stroke-width="2" />
+                                <path d="M30 70 Q35 65 40 70 Q45 75 50 70 Q55 65 60 70 Q65 75 70 70" fill="none"
+                                    stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-normal text-gray-800 mb-4">
+                            Soins du visage
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+
+                            Offrez à votre peau un véritable souffle de fraîcheur.
+                            Hydratants, purifiants ou éclat du teint — nos soins du visage s’adaptent à chaque type de
+                            peau, pour révéler votre beauté naturelle, femme ou homme.
+
+                        </p>
+                    </div>
+
+                    <!-- Soins du corps -->
+                    <div class="text-center">
+                        <div class="mb-6">
+                            <svg class="w-16 h-16 mx-auto text-gold-500" fill="currentColor" viewBox="0 0 100 100">
+                                <ellipse cx="50" cy="30" rx="12" ry="15" fill="none" stroke="currentColor"
+                                    stroke-width="2" />
+                                <rect x="44" y="44" width="12" height="25" rx="6" fill="none" stroke="currentColor"
+                                    stroke-width="2" />
+                                <path d="M38 55 L32 65 L35 68 L41 58" fill="none" stroke="currentColor"
+                                    stroke-width="2" />
+                                <path d="M62 55 L68 65 L65 68 L59 58" fill="none" stroke="currentColor"
+                                    stroke-width="2" />
+                                <circle cx="47" cy="27" r="1.5" />
+                                <circle cx="53" cy="27" r="1.5" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-normal text-gray-800 mb-4">
+                            Soins du corps
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Faites une pause.
+                            Gommages, massages, modelages… nos soins corporels sont pensés pour détendre vos muscles,
+                            apaiser votre esprit et revitaliser votre peau en profondeur.
+
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Maquillage centré -->
+                <div class="text-center scroll-reveal">
+                    <div class="mb-6">
+                        <svg class="w-16 h-16 mx-auto text-gold-500" fill="currentColor" viewBox="0 0 100 100">
+                            <rect x="25" y="35" width="12" height="35" rx="6" fill="none" stroke="currentColor"
+                                stroke-width="2" />
+                            <rect x="40" y="30" width="8" height="40" rx="4" fill="none" stroke="currentColor"
+                                stroke-width="2" />
+                            <rect x="55" y="32" width="10" height="38" rx="5" fill="none" stroke="currentColor"
+                                stroke-width="2" />
+                            <circle cx="31" cy="28" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+                            <circle cx="44" cy="25" r="3" fill="none" stroke="currentColor" stroke-width="2" />
+                            <circle cx="60" cy="27" r="3.5" fill="none" stroke="currentColor" stroke-width="2" />
+                            <path d="M70 45 Q75 40 80 45 L82 50 Q80 55 75 55 Q70 55 68 50 Z" fill="none"
+                                stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-2xl font-normal text-gray-800 mb-4">
+                        Maquillage
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-14">
+                        Sublimez votre beauté pour chaque occasion.
+                        Que ce soit pour une journée spéciale, une soirée élégante ou votre mariage, nos maquilleuses
+                        vous accompagnent avec des looks sur-mesure, et même des cours personnalisés si vous souhaitez
+                        apprendre.
+                    </p>
+
+                    <!-- Beauté des mains et pieds -->
+                    <div class="text-center">
+                        <div class="mb-6">
+                            <svg class="w-16 h-16 mx-auto text-gold-500" fill="currentColor" viewBox="0 0 100 100">
+                                <rect x="35" y="30" width="8" height="25" rx="4" fill="none" stroke="currentColor"
+                                    stroke-width="2" />
+                                <rect x="45" y="25" width="8" height="30" rx="4" fill="none" stroke="currentColor"
+                                    stroke-width="2" />
+                                <rect x="55" y="28" width="8" height="27" rx="4" fill="none" stroke="currentColor"
+                                    stroke-width="2" />
+                                <circle cx="39" cy="25" r="3" fill="none" stroke="currentColor" stroke-width="2" />
+                                <circle cx="49" cy="20" r="3" fill="none" stroke="currentColor" stroke-width="2" />
+                                <circle cx="59" cy="23" r="3" fill="none" stroke="currentColor" stroke-width="2" />
+                                <path d="M30 60 L35 65 L45 65 L50 70 L55 65 L65 65 L70 60" fill="none"
+                                    stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-2xl font-normal text-gray-800 mb-4">
+                            Beauté des mains et pieds
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Prenez soin de vous jusqu’au bout des ongles.
+                            Manucure, pédicure, soins relaxants — vos mains et vos pieds méritent l’attention d’un
+                            rituel complet de beauté.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deuxième rangée pour Maquillage -->
+        <div class="grid lg:grid-cols-3 gap-16 mt-20">
+            <div></div> <!-- Espace vide -->
+
+
+            <div></div> <!-- Espace vide -->
+        </div>
+        </div>
+        <div class="flex items-center justify-center">
+            <a href="/beautycontact.html"
+                class="group relative px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold uppercase tracking-wider text-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-gold-500/25 shimmer-effect">
+                <span class="relative z-10">Réservez un appel</span>
+            </a>
+        </div>
+
+    </section>
+    <!-- Galerie Section -->
+    <section class="py-20 bg-gradient-to-b from-gold-50 to-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-serif text-5xl lg:text-6xl font-light text-brown-950 mb-6 leading-tight">
+                    Notre <span class="text-gold-500">Galerie</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Découvrez nos réalisations et l'ambiance unique de notre institut
+                </p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16" id="galleryGrid">
+
+                <div class="gallery-item group scroll-reveal">
+                    <div
+                        class="relative overflow-hidden rounded-lg bg-gradient-to-br from-pink-100 to-pink-200 aspect-[4/5] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="absolute inset-0 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                            <img class="object-cover w-full h-full rounded-lg" src="/img/imag2e.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Image 2 -->
+                <div class="gallery-item group scroll-reveal">
+                    <div
+                        class="relative overflow-hidden rounded-lg bg-gradient-to-br from-pink-100 to-pink-200 aspect-[4/5] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="absolute inset-0 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                            <img class="object-cover w-full h-full rounded-lg" src="/img/image3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="gallery-item group scroll-reveal">
+                    <div
+                        class="relative overflow-hidden rounded-lg bg-gradient-to-br from-pink-100 to-pink-200 aspect-[4/5] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="absolute inset-0 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                            <img class="object-cover w-full h-full rounded-lg" src="/img/image4.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="gallery-item group scroll-reveal">
+                    <div
+                        class="relative overflow-hidden rounded-lg bg-gradient-to-br from-pink-100 to-pink-200 aspect-[4/5] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="absolute inset-0 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                            <img class="object-cover w-full h-full rounded-lg" src="/img/image5.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="gallery-item group scroll-reveal">
+                    <div
+                        class="relative overflow-hidden rounded-lg bg-gradient-to-br from-pink-100 to-pink-200 aspect-[4/5] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="absolute inset-0 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                            <img class="object-cover w-full h-full rounded-lg" src="/img/image6.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="gallery-item group scroll-reveal">
+                    <div
+                        class="relative overflow-hidden rounded-lg bg-gradient-to-br from-pink-100 to-pink-200 aspect-[4/5] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="absolute inset-0 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                            <img class="object-cover w-full h-full rounded-lg" src="/img/image7.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 7 -->
+                <div class="gallery-item group scroll-reveal">
+                    <div
+                        class="relative overflow-hidden rounded-lg bg-gradient-to-br from-pink-100 to-pink-200 aspect-[4/5] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="absolute inset-0 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                            <img class="object-cover w-full h-full rounded-lg" src="/img/image8.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 8 -->
+                <div class="gallery-item group scroll-reveal">
+                    <div
+                        class="relative overflow-hidden rounded-lg bg-gradient-to-br from-pink-100 to-pink-200 aspect-[4/5] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="absolute inset-0 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                            <img class="object-cover w-full h-full rounded-lg" src="/img/image9.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 9 -->
+                <div class="gallery-item group scroll-reveal">
+                    <div
+                        class="relative overflow-hidden rounded-lg bg-gradient-to-br from-pink-100 to-pink-200 aspect-[4/5] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="absolute inset-0 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                            <img class="object-cover w-full h-full rounded-lg" src="/img/image10.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 10 -->
+                <div class="gallery-item group scroll-reveal">
+                    <div
+                        class="relative overflow-hidden rounded-lg bg-gradient-to-br from-pink-100 to-pink-200 aspect-[4/5] hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="absolute inset-0 bg-white rounded-lg shadow-inner flex items-center justify-center">
+                            <img class="object-cover w-full h-full rounded-lg" src="/img/image11.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center mt-16 scroll-reveal">
+                <div class="bg-gradient-to-br from-gold-50 to-gold-100 rounded-2xl p-12">
+                    <h3 class="font-serif text-3xl font-light text-brown-950 mb-4">
+                        Envie de faire partie de notre galerie ?
+                    </h3>
+                    <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                        Réservez votre rendez-vous et laissez-nous créer votre moment beauté parfait.
+                        Chaque cliente devient notre inspiration !
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/beautycontact.html"
+                            class="inline-flex items-center bg-gradient-to-r from-gold-500 to-gold-600 text-white px-8 py-4 rounded-lg font-semibold hover:scale-105 transition-transform duration-300">
+                            Réserver maintenant
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/beautyco_ci/"
+                            class="inline-flex items-center bg-white text-brown-950 px-8 py-4 rounded-lg font-semibold hover:scale-105 transition-transform duration-300 border border-gray-200">
+                            Voir plus sur Instagram
+                            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Scroll reveal functionality
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Initialize scroll reveal
+            document.addEventListener('DOMContentLoaded', () => {
+                const scrollElements = document.querySelectorAll('.scroll-reveal');
+
+                scrollElements.forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    el.style.transition = 'all 0.8s ease-out';
+                    observer.observe(el);
+                });
+            });
+        </script>
+    </section>
+
+    <!-- Témoignages Clients Section -->
+    <section class="py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div
+            class="absolute top-0 left-0 w-48 h-48 bg-gradient-to-br from-pink-200/20 to-pink-300/10 rounded-full blur-2xl transform -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-gold-200/20 to-gold-300/10 rounded-full blur-2xl transform translate-x-1/2 translate-y-1/2">
+        </div>
+
+        <div class="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
+            <!-- Header with large quote -->
+            <div class="text-center mb-12 scroll-reveal">
+                <div class="text-6xl text-gray-200 font-serif leading-none mb-2">"</div>
+                <h2
+                    class="font-serif text-3xl lg:text-4xl font-normal text-brown-950 mb-6 leading-tight uppercase tracking-wider">
+                    Témoignages Clients
+                </h2>
+            </div>
+
+            <!-- Testimonials Slider Container -->
+            <div class="relative">
+                <!-- Slider Wrapper -->
+                <div class="overflow-hidden">
+                    <div class="testimonial-slider flex transition-transform duration-500 ease-in-out"
+                        id="testimonialSlider">
+
+                        <!-- Testimonial 1 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                                <!-- Left Testimonial -->
+                                <div class="text-center">
+                                    <h3 class="font-serif text-xl text-brown-950 mb-4">Elsa Severe</h3>
+                                    <div class="text-4xl text-gold-500 font-serif leading-none mb-4">"</div>
+                                    <p class="text-gray-700 text-base leading-relaxed mb-6 italic max-w-sm mx-auto">
+                                        Amandine est un esthéticienne très douce toujours souriante et à l'écoute. Je
+                                        vous la recommande
+                                        les yeux fermés. Le massage prénatal est juste parfait autant pour maman que
+                                        pour bébé.
+                                    </p>
+                                    <div class="flex justify-center space-x-1">
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                    </div>
+                                </div>
+
+                                <!-- Right Testimonial -->
+                                <div class="text-center">
+                                    <h3 class="font-serif text-xl text-brown-950 mb-4">A. Hadamart</h3>
+                                    <div class="text-4xl text-gold-500 font-serif leading-none mb-4">"</div>
+                                    <p class="text-gray-700 text-base leading-relaxed mb-6 italic max-w-sm mx-auto">
+                                        Se faire chouchouter, dorloter par des doigts de fée, j'adore ❤️ ❤️ ❤️ Vraiment
+                                        hâte de revenir vous
+                                        voir 😊 😊 😊 😊
+                                    </p>
+                                    <div class="flex justify-center space-x-1">
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                                <!-- Left Testimonial -->
+                                <div class="text-center">
+                                    <h3 class="font-serif text-xl text-brown-950 mb-4">Fatou Diallo</h3>
+                                    <div class="text-4xl text-gold-500 font-serif leading-none mb-4">"</div>
+                                    <p class="text-gray-700 text-base leading-relaxed mb-6 italic max-w-sm mx-auto">
+                                        Mes ongles n'ont jamais été aussi beaux ! Le nail art est créatif et la tenue
+                                        est parfaite.
+                                        Je recommande vivement ce salon, l'équipe est professionnelle et accueillante.
+                                    </p>
+                                    <div class="flex justify-center space-x-1">
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                    </div>
+                                </div>
+
+                                <!-- Right Testimonial -->
+                                <div class="text-center">
+                                    <h3 class="font-serif text-xl text-brown-950 mb-4">Mariam Koné</h3>
+                                    <div class="text-4xl text-gold-500 font-serif leading-none mb-4">"</div>
+                                    <p class="text-gray-700 text-base leading-relaxed mb-6 italic max-w-sm mx-auto">
+                                        L'ambiance est apaisante et le service impeccable. Mon maquillage de mariage
+                                        était absolument parfait.
+                                        Merci pour ce moment magique ! Une équipe à l'écoute et très talentueuse.
+                                    </p>
+                                    <div class="flex justify-center space-x-1">
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                                <!-- Left Testimonial -->
+                                <div class="text-center">
+                                    <h3 class="font-serif text-xl text-brown-950 mb-4">Khadija Bamba</h3>
+                                    <div class="text-4xl text-gold-500 font-serif leading-none mb-4">"</div>
+                                    <p class="text-gray-700 text-base leading-relaxed mb-6 italic max-w-sm mx-auto">
+                                        L'épilation est douce et sans douleur. Le personnel est très attentionné et
+                                        professionnel.
+                                        Je ne vais plus nulle part ailleurs ! Un vrai moment de détente à chaque visite.
+                                    </p>
+                                    <div class="flex justify-center space-x-1">
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                    </div>
+                                </div>
+
+                                <!-- Right Testimonial -->
+                                <div class="text-center">
+                                    <h3 class="font-serif text-xl text-brown-950 mb-4">Nadia Lama</h3>
+                                    <div class="text-4xl text-gold-500 font-serif leading-none mb-4">"</div>
+                                    <p class="text-gray-700 text-base leading-relaxed mb-6 italic max-w-sm mx-auto">
+                                        Les massages sont divins ! Un vrai moment de détente après une semaine
+                                        stressante.
+                                        L'équipe sait exactement comment nous faire nous sentir bien. Un institut
+                                        exceptionnel !
+                                    </p>
+                                    <div class="flex justify-center space-x-1">
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                        <span class="text-lg text-gold-500">⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+                    onclick="previousSlide()">
+                    <svg class="w-5 h-5 text-gray-400 group-hover:text-gold-500 transition-colors duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+
+                <button
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+                    onclick="nextSlide()">
+                    <svg class="w-5 h-5 text-gray-400 group-hover:text-gold-500 transition-colors duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Dots Navigation -->
+            <div class="flex justify-center space-x-2 mt-8">
+                <button
+                    class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gold-500 transition-colors duration-300 active"
+                    onclick="goToSlide(0)"></button>
+                <button
+                    class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gold-500 transition-colors duration-300"
+                    onclick="goToSlide(1)"></button>
+                <button
+                    class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-gold-500 transition-colors duration-300"
+                    onclick="goToSlide(2)"></button>
+            </div>
+        </div>
+
+        <script>
+            let currentSlide = 0;
+            const totalSlides = 3;
+
+            function updateSlider() {
+                const slider = document.getElementById('testimonialSlider');
+                const dots = document.querySelectorAll('.testimonial-dot');
+
+                // Move slider
+                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+                // Update dots
+                dots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.add('active');
+                        dot.style.backgroundColor = '#d4b896'; // gold-500
+                    } else {
+                        dot.classList.remove('active');
+                        dot.style.backgroundColor = '#d1d5db'; // gray-300
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            }
+
+            function previousSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                updateSlider();
+            }
+
+            // Auto-advance slides every 6 seconds
+            setInterval(nextSlide, 6000);
+
+            // Initialize
+            updateSlider();
+        </script>
+    </section>
+
+    <!-- Avant/Après Section -->
+    <!-- CTA Section -->
+    <div class="text-center scroll-reveal">
+        <div class="bg-gradient-to-br from-gold-50 to-gold-100 rounded-2xl p-12">
+            <h3 class="font-serif text-3xl font-light text-brown-950 mb-4">
+                Prête pour votre transformation ?
+            </h3>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Nos expertes vous accompagnent pour révéler votre beauté naturelle.
+                Chaque soin est personnalisé selon vos besoins spécifiques.
+            </p>
+            <a href="/beautycontact.html"
+                class="inline-flex items-center bg-gradient-to-r from-gold-500 to-gold-600 text-white px-8 py-4 rounded-lg font-semibold hover:scale-105 transition-transform duration-300">
+                Réserver ma transformation
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </div>
+    </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-brown-950 text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="w-16 h-16 relative flex items-center justify-center">
+                            <img class="w-full h-full object-contain"
+                                src="/img/ChatGPT_Image_12_juil._2025__17_46_04-removebg-preview.png"
+                                alt="Beauty & Co Logo">
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-2xl font-light text-white">BEAUTY & CO</h4>
+                            <p class="text-gold-400 text-xs uppercase tracking-wider">Institut de Beauté</p>
+                        </div>
+                    </div>
+                    <p class="text-white/70 leading-relaxed mb-8 max-w-md">
+                        L'excellence esthétique à Abidjan. Notre institut redéfinit l'art du bien-être
+                        avec une approche premium alliant innovation et tradition pour révéler
+                        votre beauté unique.
+                    </p>
+                    <div class="flex space-x-4">
+                        <!-- Facebook -->
+                        <a href="#"
+                            class="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+                            <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="#"
+                            class="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+                            <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+
+                        <!-- WhatsApp -->
+                        <a href="#"
+                            class="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+                            <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.525 3.488" />
+                            </svg>
+                        </a>
+
+                        <!-- TikTok -->
+                        <a href="#"
+                            class="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 group">
+                            <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-gold-400 font-semibold uppercase tracking-wider text-sm mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services"
+                                class="text-white/70 hover:text-gold-400 transition-colors duration-300">Soins du
+                                Visage</a></li>
+                        <li><a href="#services"
+                                class="text-white/70 hover:text-gold-400 transition-colors duration-300">Beauté des
+                                Ongles</a></li>
+                        <li><a href="#services"
+                                class="text-white/70 hover:text-gold-400 transition-colors duration-300">Maquillage
+                                Couture</a></li>
+                        <li><a href="#services"
+                                class="text-white/70 hover:text-gold-400 transition-colors duration-300">Épilation
+                                Premium</a></li>
+                        <li><a href="#prestations"
+                                class="text-white/70 hover:text-gold-400 transition-colors duration-300">Rituels
+                                Wellness</a></li>
+                    </ul>
+                </div>
+
+                <!-- Institut -->
+                <div>
+                    <h4 class="text-gold-400 font-semibold uppercase tracking-wider text-sm mb-6">Institut</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about"
+                                class="text-white/70 hover:text-gold-400 transition-colors duration-300">Notre
+                                Histoire</a></li>
+                        <li><a href="#prestations"
+                                class="text-white/70 hover:text-gold-400 transition-colors duration-300">Prestations</a>
+                        </li>
+                        <li><a href="/beautyFAQ.html"
+                                class="text-white/70 hover:text-gold-400 transition-colors duration-300">FAQs</a>
+                        </li>
+                        <li><a href="/beautycontact.html"
+                                class="text-white/70 hover:text-gold-400 transition-colors duration-300">Contact</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-white/70 hover:text-gold-400 transition-colors duration-300">Politique de
+                                confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-white/50 text-sm">
+                        &copy; 2025 Beauty & Co - Institut de Beauté Premium. Tous droits réservés.
+                    </p>
+                    <p class="text-white/50 text-sm mt-4 md:mt-0">
+                        Développé avec passion ✨
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/beatu&co.js"></script>
+</body>
+
+</html>
