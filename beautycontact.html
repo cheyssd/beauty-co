@@ -78,30 +78,26 @@
 
 <body>
     <!-- Header -->
-    <header class="fixed top-0 w-full z-50 transition-all duration-500" id="header">
+  <header class="fixed top-0 w-full z-50 transition-all duration-500" id="header">
         <div class="glass backdrop-blur-xl border-b border-gold-200/20">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="flex justify-between items-center py-6">
                     <!-- Logo -->
-                    <a href="/beauty&co.html">
-                        <div class="flex items-center space-x-4 group">
-                            <div class="w-16 h-16 relative flex items-center justify-center">
-                                <img class="w-full h-full object-contain"
-                                    src="img/ChatGPT_Image_12_juil._2025__17_46_04-removebg-preview.png"
-                                    alt="Beauty & Co Logo">
-                            </div>
-                            <div class="transition-all duration-300 group-hover:scale-105">
-                                <h1 class="font-serif text-2xl font-light text-brown-950 tracking-wider">BEAUTY & CO
-                                </h1>
-                                <p class="text-xs text-gold-500 uppercase tracking-[3px] font-medium">Institut de Beauté
-                                </p>
-                            </div>
+                    <div class="flex items-center space-x-4 group">
+                        <div class="w-16 h-16 relative flex items-center justify-center">
+                            <img class="w-full h-full object-contain"
+                                src="/img/ChatGPT_Image_12_juil._2025__17_46_04-removebg-preview.png"
+                                alt="Beauty & Co Logo">
                         </div>
-                    </a>
+                        <div class="transition-all duration-300 group-hover:scale-105">
+                            <h1 class="font-serif text-2xl font-light text-brown-950 tracking-wider">BEAUTY & CO</h1>
+                            <p class="text-xs text-gold-500 uppercase tracking-[3px] font-medium">Institut de Beauté</p>
+                        </div>
+                    </div>
 
                     <!-- Navigation -->
                     <nav class="hidden lg:flex space-x-12">
-                        <a href="beauty&co.html"
+                        <a href="#accueil"
                             class="nav-link text-sm font-medium text-brown-900 hover:text-gold-500 transition-all duration-300 uppercase tracking-wider relative group">
                             L'Institut
                             <span
@@ -119,13 +115,13 @@
                             <span
                                 class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <a href="beautyFAQ.html"
+                        <a href="/beautyFAQ.html"
                             class="nav-link text-sm font-medium text-brown-900 hover:text-gold-500 transition-all duration-300 uppercase tracking-wider relative group">
                             FAQs
                             <span
                                 class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <a href="#contact"
+                        <a href="/beautycontact.html"
                             class="nav-link text-sm font-medium text-brown-900 hover:text-gold-500 transition-all duration-300 uppercase tracking-wider relative group">
                             Contact
                             <span
@@ -135,15 +131,74 @@
 
                     <!-- Mobile menu button -->
                     <button class="lg:hidden p-2" id="mobile-menu-button">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-brown-900 transition-transform duration-300" id="menu-icon" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
+                                d="M4 6h16M4 12h16M4 18h16" id="hamburger"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" id="close" class="hidden"></path>
                         </svg>
                     </button>
                 </div>
             </div>
+
+            <!-- Menu mobile déroulant -->
+            <div class="lg:hidden glass backdrop-blur-xl border-t border-gold-200/20 hidden" id="mobile-menu">
+                <div class="px-6 py-4 space-y-4">
+                    <a href="#accueil"
+                        class="block text-brown-900 font-medium tracking-wider uppercase py-3 border-b border-gold-200/30 hover:text-gold-500 transition-colors duration-300">L'Institut</a>
+                    <a href="#services"
+                        class="block text-brown-900 font-medium tracking-wider uppercase py-3 border-b border-gold-200/30 hover:text-gold-500 transition-colors duration-300">Services</a>
+                    <a href="#prestations"
+                        class="block text-brown-900 font-medium tracking-wider uppercase py-3 border-b border-gold-200/30 hover:text-gold-500 transition-colors duration-300">Prestations</a>
+                    <a href="/beautyFAQ.html"
+                        class="block text-brown-900 font-medium tracking-wider uppercase py-3 border-b border-gold-200/30 hover:text-gold-500 transition-colors duration-300">FAQs</a>
+                    <a href="/beautycontact.html"
+                        class="block text-brown-900 font-medium tracking-wider uppercase py-3 hover:text-gold-500 transition-colors duration-300">Contact</a>
+                </div>
+            </div>
         </div>
     </header>
+
+    <script>
+        // Menu mobile toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger');
+            const closeIcon = document.getElementById('close');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function () {
+                    // Toggle menu visibility
+                    mobileMenu.classList.toggle('hidden');
+
+                    // Toggle icons
+                    hamburgerIcon.classList.toggle('hidden');
+                    closeIcon.classList.toggle('hidden');
+                });
+
+                // Fermer le menu si on clique sur un lien
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.add('hidden');
+                        hamburgerIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    });
+                });
+
+                // Fermer le menu si on clique ailleurs
+                document.addEventListener('click', function (e) {
+                    if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                        hamburgerIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
 
     <!-- Contact Section -->
     <section id="contact" class="py-32 bg-white relative overflow-hidden">
