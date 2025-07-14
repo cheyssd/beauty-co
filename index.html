@@ -200,58 +200,52 @@
         });
     </script>
 
-    <section id="accueil" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-20">
-        <div class="absolute inset-0 hero-bg"></div>
-        <div class="absolute inset-0 bg-gradient-to-br from-gold-500/30 via-transparent to-brown-900/40"></div>
+<!-- Hero Section corrigée pour mobile -->
+<section id="accueil" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-40 sm:pt-32 pb-20">
+    <div class="absolute inset-0 hero-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-gold-500/30 via-transparent to-brown-900/40"></div>
 
-        <!-- Floating elements -->
-        <div
-            class="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-gold-300/20 to-gold-500/20 rounded-full blur-xl animate-float">
-        </div>
-        <div class="absolute bottom-32 right-16 w-48 h-48 bg-gradient-to-tl from-gold-400/20 to-gold-600/20 rounded-full blur-2xl animate-float"
-            style="animation-delay: 2s;"></div>
+    <!-- Floating elements -->
+    <div class="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-gold-300/20 to-gold-500/20 rounded-full blur-xl animate-float"></div>
+    <div class="absolute bottom-32 right-16 w-48 h-48 bg-gradient-to-tl from-gold-400/20 to-gold-600/20 rounded-full blur-2xl animate-float" style="animation-delay: 2s;"></div>
 
-        <div
-            class="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col justify-center min-h-[calc(100vh-12rem)]">
-            <div class="scroll-reveal">
-                <p class="text-gold-300 text-sm font-medium uppercase tracking-[4px] mb-6">Excellence & Raffinement</p>
-            </div>
-            <div class="scroll-reveal">
-                <h1
-                    class="font-serif text-5xl sm:text-6xl lg:text-7xl font-light text-white mb-8 tracking-wider leading-tight">
-                    <span class="block">BEAUTY</span>
-                    <span class="text-gradient">&</span>
-                    <span class="block">CO</span>
-                </h1>
-            </div>
-            <div class="scroll-reveal">
-                <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed px-4">
-                    Offrez à votre corps et votre esprit une parenthèse de bien-être dans un institut premium au cœur
-                    d'Abidjan.
-                    Des soins pensés pour vous, alliant innovations modernes et rituels traditionnels pour révéler votre
-                    beauté naturelle.
-                </p>
-            </div>
-            <div class="scroll-reveal flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4 mb-8">
-                <a href="/beautycontact.html"
-                    class="group relative px-6 sm:px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold uppercase tracking-wider text-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-gold-500/25 shimmer-effect">
-                    <span class="relative z-10">Prendre Rendez-vous</span>
-                </a>
-                <a href="#services"
-                    class="group relative px-6 sm:px-8 py-4 glass border-2 border-white/30 text-white font-semibold uppercase tracking-wider text-sm transition-all duration-500 hover:bg-white/10 hover:scale-105">
-                    Découvrir nos Services
-                    <span class="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-2">→</span>
-                </a>
-            </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col justify-center min-h-[calc(100vh-10rem)]">
+        <div class="scroll-reveal mb-6 sm:mb-8">
+            <p class="text-gold-300 text-sm font-medium uppercase tracking-[4px]">Excellence & Raffinement</p>
         </div>
+        <div class="scroll-reveal">
+            <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-light text-white mb-6 sm:mb-8 tracking-wider leading-tight">
+                <span class="block">BEAUTY</span>
+                <span class="text-gradient">&</span>
+                <span class="block">CO</span>
+            </h1>
+        </div>
+        <div class="scroll-reveal">
+            <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4">
+                Offrez à votre corps et votre esprit une parenthèse de bien-être dans un institut premium au cœur d'Abidjan.
+                Des soins pensés pour vous, alliant innovations modernes et rituels traditionnels pour révéler votre beauté naturelle.
+            </p>
+        </div>
+        <div class="scroll-reveal flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4 mb-8 sm:mb-12">
+            <a href="/beautycontact.html"
+                class="group relative px-6 sm:px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold uppercase tracking-wider text-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-gold-500/25 shimmer-effect">
+                <span class="relative z-10">Prendre Rendez-vous</span>
+            </a>
+            <a href="#services"
+                class="group relative px-6 sm:px-8 py-4 glass border-2 border-white/30 text-white font-semibold uppercase tracking-wider text-sm transition-all duration-500 hover:bg-white/10 hover:scale-105">
+                Découvrir nos Services
+                <span class="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-2">→</span>
+            </a>
+        </div>
+    </div>
 
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-                <div class="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
-            </div>
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div class="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
         </div>
-    </section>
+    </div>
+</section>
 
 
     <!-- About Section -->
